@@ -1,0 +1,194 @@
+.dialog-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  inset: 0;
+  animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1000;
+}
+
+.dialog-content {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 600px;
+  max-height: 85vh;
+  padding: 0;
+  animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+}
+
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 24px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dialog-title {
+  margin: 0;
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 20px;
+}
+
+.icon-button {
+  all: unset;
+  font-family: inherit;
+  border-radius: 6px;
+  height: 32px;
+  width: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.icon-button:hover {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.dialog-body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.detail-section {
+  margin-bottom: 20px;
+}
+
+.detail-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.detail-description {
+  color: #374151;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.detail-value {
+  color: #1f2937;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.detail-tag {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 500;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-transform: capitalize;
+}
+
+.detail-tag[data-tag='frontend'] {
+  background-color: #3b82f6;
+}
+
+.detail-tag[data-tag='backend'] {
+  background-color: #10b981;
+}
+
+.detail-tag[data-tag='design'] {
+  background-color: #f59e0b;
+}
+
+.detail-tag[data-tag='testing'] {
+  background-color: #8b5cf6;
+}
+
+.detail-tag[data-tag='devops'] {
+  background-color: #ef4444;
+}
+
+.dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.button {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.button-delete {
+  background-color: #ef4444;
+  color: white;
+}
+
+.button-delete:hover {
+  background-color: #dc2626;
+}
+
+.button-secondary {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.button-secondary:hover {
+  background-color: #e5e7eb;
+}
+
+@keyframes overlayShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes contentShow {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@media (max-width: 640px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+}

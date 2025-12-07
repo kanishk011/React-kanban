@@ -1,0 +1,52 @@
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  flex: 1;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  color: white;
+}
+
+.header-subtitle {
+  font-size: 14px;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.header-right {
+  display: flex;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .header-title {
+    font-size: 20px;
+  }
+
+  .header-subtitle {
+    font-size: 13px;
+  }
+}

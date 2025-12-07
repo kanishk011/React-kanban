@@ -1,0 +1,50 @@
+.kanban-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 24px;
+  height: calc(100vh - 180px);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for horizontal scroll */
+.kanban-board::-webkit-scrollbar {
+  height: 8px;
+}
+
+.kanban-board::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 4px;
+}
+
+.kanban-board::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+.kanban-board::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+@media (max-width: 1200px) {
+  .kanban-board {
+    grid-template-columns: repeat(2, 1fr);
+    height: auto;
+    max-height: calc(100vh - 180px);
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .kanban-board {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    gap: 16px;
+    height: auto;
+    max-height: calc(100vh - 140px);
+    overflow-x: visible;
+    overflow-y: auto;
+  }
+}

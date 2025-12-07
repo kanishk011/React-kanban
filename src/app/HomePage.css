@@ -1,0 +1,9 @@
+.home-page {
+  min-height: 100vh;
+  background-color: #f3f4f6;
+}
+
+.main-content {
+  max-width: 1920px;
+  margin: 0 auto;
+}
